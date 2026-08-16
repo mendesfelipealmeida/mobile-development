@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { login } from '../store/authSlice';
@@ -12,7 +12,7 @@ export default function LoginScreen() {
   function handleLogin() {
     const nextErrors = {};
     if (name.trim().length < 2) nextErrors.name = 'Informe seu nome.';
-    if (!email.includes('@') || !email.includes('.')) nextErrors.email = 'Informe um e-mail valido.';
+    if (!email.includes('@') || !email.includes('.')) nextErrors.email = 'Informe um e-mail válido.';
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length === 0) {
@@ -23,7 +23,7 @@ export default function LoginScreen() {
   return (
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={styles.container}>
       <View style={styles.panel}>
-        <Text style={styles.kicker}>Catalogo Interativo</Text>
+        <Text style={styles.kicker}>Catálogo Interativo</Text>
         <Text style={styles.title}>Entre para acessar os produtos</Text>
         <Text style={styles.label}>Nome</Text>
         <TextInput style={[styles.input, errors.name && styles.inputError]} value={name} onChangeText={setName} placeholder="Seu nome" autoCapitalize="words" />

@@ -1,11 +1,11 @@
-﻿export const genderTabs = [
+export const genderTabs = [
   {
     key: 'mens',
     label: 'Masculino',
     categories: [
       { key: 'mens-shirts', label: 'Camisas' },
-      { key: 'mens-shoes', label: 'Calcados' },
-      { key: 'mens-watches', label: 'Relogios' },
+      { key: 'mens-shoes', label: 'Calçados' },
+      { key: 'mens-watches', label: 'Relógios' },
     ],
   },
   {
@@ -15,8 +15,8 @@
       { key: 'womens-bags', label: 'Bolsas' },
       { key: 'womens-dresses', label: 'Vestidos' },
       { key: 'womens-jewellery', label: 'Joias' },
-      { key: 'womens-shoes', label: 'Calcados' },
-      { key: 'womens-watches', label: 'Relogios' },
+      { key: 'womens-shoes', label: 'Calçados' },
+      { key: 'womens-watches', label: 'Relógios' },
     ],
   },
 ];

@@ -1,10 +1,11 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ErrorState from '../components/ErrorState';
 import LoadingState from '../components/LoadingState';
 import { getProductById } from '../services/api';
 
-export default function ProductDetailScreen({ productId, onBack }) {
+export default function ProductDetailScreen({ navigation, route }) {
+  const { productId } = route.params;
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -16,7 +17,7 @@ export default function ProductDetailScreen({ productId, onBack }) {
       const data = await getProductById(productId);
       setProduct(data);
     } catch (err) {
-      setError('Nao foi possivel abrir os detalhes deste produto.');
+      setError('Não foi possível abrir os detalhes deste produto.');
     } finally {
       setLoading(false);
     }
@@ -29,7 +30,7 @@ export default function ProductDetailScreen({ productId, onBack }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable style={styles.backButton} onPress={onBack}>
+        <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
           <Text style={styles.backText}>Voltar</Text>
         </Pressable>
         <Text style={styles.headerTitle}>Detalhes</Text>
@@ -47,8 +48,8 @@ export default function ProductDetailScreen({ productId, onBack }) {
           </View>
           <View style={styles.infoBox}>
             <Text style={styles.infoLabel}>Marca</Text>
-            <Text style={styles.infoValue}>{product.brand || 'Nao informado'}</Text>
-            <Text style={styles.infoLabel}>Avaliacao</Text>
+            <Text style={styles.infoValue}>{product.brand || 'Não informado'}</Text>
+            <Text style={styles.infoLabel}>Avaliação</Text>
             <Text style={styles.infoValue}>{product.rating} / 5</Text>
             <Text style={styles.infoLabel}>Estoque</Text>
             <Text style={styles.infoValue}>{product.stock} unidades</Text>

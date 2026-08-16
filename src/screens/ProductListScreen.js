@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import CategoryTabs from '../components/CategoryTabs';
@@ -9,7 +9,7 @@ import { genderTabs } from '../data/categories';
 import { getProductsByCategory } from '../services/api';
 import { logout } from '../store/authSlice';
 
-export default function ProductListScreen({ onOpenProduct }) {
+export default function ProductListScreen({ navigation }) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
   const [activeTab, setActiveTab] = useState(genderTabs[0].key);
@@ -26,6 +26,10 @@ export default function ProductListScreen({ onOpenProduct }) {
     setActiveCategory(nextTab.categories[0].key);
   }
 
+  function handleLogout() {
+    dispatch(logout());
+  }
+
   async function loadProducts() {
     setLoading(true);
     setError('');
@@ -33,7 +37,7 @@ export default function ProductListScreen({ onOpenProduct }) {
       const data = await getProductsByCategory(activeCategory);
       setProducts(data);
     } catch (err) {
-      setError('Verifique sua conexao e tente novamente. A API usada e https://dummyjson.com.');
+      setError('Verifique sua conexão e tente novamente. A API usada é https://dummyjson.com.');
     } finally {
       setLoading(false);
     }
@@ -47,10 +51,10 @@ export default function ProductListScreen({ onOpenProduct }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.greeting}>Ola, {user.name}</Text>
+          <Text style={styles.greeting}>Olá, {user.name}</Text>
           <Text style={styles.title}>Produtos {activeTabData.label.toLowerCase()}</Text>
         </View>
-        <Pressable style={styles.logoutButton} onPress={() => dispatch(logout())}>
+        <Pressable style={styles.logoutButton} onPress={handleLogout}>
           <Text style={styles.logoutText}>Sair</Text>
         </Pressable>
       </View>
@@ -61,7 +65,7 @@ export default function ProductListScreen({ onOpenProduct }) {
         <FlatList
           data={products}
           keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => <ProductCard product={item} onPress={() => onOpenProduct(item.id)} />}
+          renderItem={({ item }) => <ProductCard product={item} onPress={() => navigation.navigate('ProductDetail', { productId: item.id })} />}
           contentContainerStyle={styles.list}
           ListEmptyComponent={<Text style={styles.empty}>Nenhum produto encontrado.</Text>}
         />

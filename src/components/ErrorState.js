@@ -1,10 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function ErrorState({ message, onRetry }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Nao foi possivel carregar</Text>
+      <Text style={styles.title}>Não foi possível carregar</Text>
       <Text style={styles.message}>{message}</Text>
       <Pressable style={styles.button} onPress={onRetry}>
         <Text style={styles.buttonText}>Tentar novamente</Text>
