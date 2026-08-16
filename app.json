@@ -1,0 +1,18 @@
+﻿{
+  "expo": {
+    "name": "Catalogo Mobile",
+    "slug": "catalogo-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#f7f4ef"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.felipe.catalogomobile"
+    }
+  }
+}
