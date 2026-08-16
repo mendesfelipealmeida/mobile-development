@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "mobile-development",
   "version": "1.0.0",
   "private": true,
@@ -10,12 +10,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "latest",
-    "axios": "latest",
-    "expo": "latest",
-    "react": "latest",
-    "react-native": "latest",
-    "react-redux": "latest"
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.11.0",
+    "expo": "~53.0.22",
+    "react": "19.0.0",
+    "react-native": "0.79.5",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {},
   "engines": {
