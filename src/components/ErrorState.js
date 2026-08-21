@@ -14,9 +14,9 @@ export default function ErrorState({ message, onRetry }) {
 }
 
 const styles = StyleSheet.create({
-  container: { margin: 18, padding: 18, borderRadius: 8, backgroundColor: '#fff5f2', borderWidth: 1, borderColor: '#ffd4c8' },
-  title: { fontSize: 17, fontWeight: '700', color: '#9a3412', marginBottom: 6 },
-  message: { fontSize: 14, color: '#6f4a3b', marginBottom: 14, lineHeight: 20 },
-  button: { alignSelf: 'flex-start', backgroundColor: '#9a3412', paddingHorizontal: 14, paddingVertical: 10, borderRadius: 6 },
-  buttonText: { color: '#fff', fontWeight: '700' },
+  container: { margin: 18, padding: 18, borderRadius: 8, backgroundColor: '#fff7ed', borderWidth: 1, borderColor: '#fed7aa' },
+  title: { fontSize: 17, fontWeight: '800', color: '#c2410c', marginBottom: 6 },
+  message: { fontSize: 14, color: '#7c2d12', marginBottom: 14, lineHeight: 20 },
+  button: { alignSelf: 'flex-start', backgroundColor: '#0f4c81', paddingHorizontal: 14, paddingVertical: 10, borderRadius: 6 },
+  buttonText: { color: '#fff', fontWeight: '800' },
 });

@@ -50,7 +50,7 @@ export default function ProductListScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <View>
+        <View style={styles.headerText}>
           <Text style={styles.greeting}>Olá, {user.name}</Text>
           <Text style={styles.title}>Produtos {activeTabData.label.toLowerCase()}</Text>
         </View>
@@ -75,12 +75,13 @@ export default function ProductListScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f7f4ef' },
-  header: { paddingHorizontal: 16, paddingTop: 18, paddingBottom: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 14 },
-  greeting: { color: '#68736a', fontSize: 14, marginBottom: 4 },
-  title: { color: '#1f2a24', fontSize: 25, lineHeight: 31, fontWeight: '800' },
-  logoutButton: { minHeight: 40, paddingHorizontal: 14, borderRadius: 6, backgroundColor: '#26352d', alignItems: 'center', justifyContent: 'center' },
-  logoutText: { color: '#fff', fontWeight: '800' },
+  container: { flex: 1, backgroundColor: '#f3f7fb' },
+  header: { paddingHorizontal: 16, paddingTop: 18, paddingBottom: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 14, backgroundColor: '#0f4c81' },
+  headerText: { flex: 1 },
+  greeting: { color: '#dbeafe', fontSize: 14, marginBottom: 4 },
+  title: { color: '#ffffff', fontSize: 25, lineHeight: 31, fontWeight: '900' },
+  logoutButton: { minHeight: 40, paddingHorizontal: 14, borderRadius: 6, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center' },
+  logoutText: { color: '#0f4c81', fontWeight: '800' },
   list: { paddingTop: 4, paddingBottom: 24 },
-  empty: { textAlign: 'center', color: '#657067', marginTop: 30 },
+  empty: { textAlign: 'center', color: '#52606d', marginTop: 30 },
 });

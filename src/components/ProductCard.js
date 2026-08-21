@@ -21,12 +21,12 @@ export default function ProductCard({ product, onPress }) {
 }
 
 const styles = StyleSheet.create({
-  card: { flexDirection: 'row', backgroundColor: '#ffffff', borderRadius: 8, marginHorizontal: 16, marginBottom: 12, padding: 12, borderWidth: 1, borderColor: '#e7e0d6' },
-  image: { width: 92, height: 92, borderRadius: 6, backgroundColor: '#f2eee8' },
+  card: { flexDirection: 'row', backgroundColor: '#ffffff', borderRadius: 8, marginHorizontal: 16, marginBottom: 12, padding: 12, borderWidth: 1, borderColor: '#d9e2ec' },
+  image: { width: 92, height: 92, borderRadius: 6, backgroundColor: '#eef4fb' },
   info: { flex: 1, marginLeft: 12, justifyContent: 'space-between' },
-  title: { color: '#1f2a24', fontSize: 16, fontWeight: '700', lineHeight: 20 },
-  description: { color: '#657067', fontSize: 13, lineHeight: 18, marginVertical: 6 },
+  title: { color: '#102a43', fontSize: 16, fontWeight: '800', lineHeight: 20 },
+  description: { color: '#52606d', fontSize: 13, lineHeight: 18, marginVertical: 6 },
   footer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
-  price: { color: '#1d6f65', fontSize: 16, fontWeight: '800' },
-  discount: { color: '#8a4b12', fontSize: 12, fontWeight: '700', backgroundColor: '#fff0d9', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
+  price: { color: '#0f4c81', fontSize: 16, fontWeight: '900' },
+  discount: { color: '#0f4c81', fontSize: 12, fontWeight: '800', backgroundColor: '#dbeafe', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
 });

@@ -21,7 +21,7 @@ const productTranslations = {
   },
   88: {
     title: 'Tênis Nike Air Jordan 1 Vermelho e Preto',
-    description: 'Tênis de basquete icônico da Nike em vermelho e preto, conhecido pelo design marcante e bom desempenho. É uma escolha popular entre atletas e fãs de sneakers.',
+    description: 'Tênis de basquete icônico da Nike em vermelho e preto, conhecido pelo design marcante e bom desempenho. É uma escolha popular entre atletas e fãs de tênis.',
   },
   89: {
     title: 'Chuteiras de Beisebol Nike',
@@ -32,12 +32,12 @@ const productTranslations = {
     description: 'Tênis Puma Future Rider com combinação de estilo retrô e conforto moderno. Ideal para uso casual, oferece uma opção confortável e estilosa para o dia a dia.',
   },
   91: {
-    title: 'Tênis Esportivo Off White e Vermelho',
-    description: 'Tênis esportivo em off white e vermelho que combina estilo e funcionalidade. A composição de cores dá um toque moderno e cheio de energia ao visual.',
+    title: 'Tênis Esportivo Branco Gelo e Vermelho',
+    description: 'Tênis esportivo em branco gelo e vermelho que combina estilo e funcionalidade. A composição de cores dá um toque moderno e cheio de energia ao visual.',
   },
   92: {
-    title: 'Tênis Esportivo Off White Vermelho',
-    description: 'Outra variação de tênis esportivo em off white e vermelho, com design diferenciado. Oferece estilo e conforto para ocasiões casuais.',
+    title: 'Tênis Esportivo Branco Gelo e Vermelho',
+    description: 'Outra variação de tênis esportivo em branco gelo e vermelho, com design diferenciado. Oferece estilo e conforto para ocasiões casuais.',
   },
   93: {
     title: 'Relógio com Pulseira de Couro Marrom',
