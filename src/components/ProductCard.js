@@ -1,16 +1,19 @@
-﻿import React from 'react';
+import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { formatDiscount, formatUsdPrice, getProductPresentation } from '../data/productPresentation';
 
 export default function ProductCard({ product, onPress }) {
+  const presentation = getProductPresentation(product);
+
   return (
     <Pressable style={styles.card} onPress={onPress}>
       <Image source={{ uri: product.thumbnail }} style={styles.image} resizeMode="contain" />
       <View style={styles.info}>
-        <Text numberOfLines={2} style={styles.title}>{product.title}</Text>
-        <Text numberOfLines={2} style={styles.description}>{product.description}</Text>
+        <Text numberOfLines={2} style={styles.title}>{presentation.displayTitle}</Text>
+        <Text numberOfLines={2} style={styles.description}>{presentation.displayDescription}</Text>
         <View style={styles.footer}>
-          <Text style={styles.price}>$ {Number(product.price).toFixed(2)}</Text>
-          <Text style={styles.discount}>{Math.round(product.discountPercentage)}% OFF</Text>
+          <Text style={styles.price}>{formatUsdPrice(product.price)}</Text>
+          <Text style={styles.discount}>{formatDiscount(product.discountPercentage)}</Text>
         </View>
       </View>
     </Pressable>

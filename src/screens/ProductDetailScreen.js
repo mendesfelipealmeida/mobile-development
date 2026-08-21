@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ErrorState from '../components/ErrorState';
 import LoadingState from '../components/LoadingState';
+import { formatDiscount, formatUsdPrice, getProductPresentation } from '../data/productPresentation';
 import { getProductById } from '../services/api';
 
 export default function ProductDetailScreen({ navigation, route }) {
@@ -27,6 +28,8 @@ export default function ProductDetailScreen({ navigation, route }) {
     loadProduct();
   }, [productId]);
 
+  const presentation = product ? getProductPresentation(product) : null;
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -40,11 +43,11 @@ export default function ProductDetailScreen({ navigation, route }) {
       {!loading && product ? (
         <ScrollView contentContainerStyle={styles.content}>
           <Image source={{ uri: product.thumbnail }} resizeMode="contain" style={styles.image} />
-          <Text style={styles.title}>{product.title}</Text>
-          <Text style={styles.description}>{product.description}</Text>
+          <Text style={styles.title}>{presentation.displayTitle}</Text>
+          <Text style={styles.description}>{presentation.displayDescription}</Text>
           <View style={styles.priceRow}>
-            <Text style={styles.price}>$ {Number(product.price).toFixed(2)}</Text>
-            <Text style={styles.discount}>{Number(product.discountPercentage).toFixed(1)}% de desconto</Text>
+            <Text style={styles.price}>{formatUsdPrice(product.price)}</Text>
+            <Text style={styles.discount}>{formatDiscount(product.discountPercentage, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</Text>
           </View>
           <View style={styles.infoBox}>
             <Text style={styles.infoLabel}>Marca</Text>
