@@ -1,6 +1,6 @@
 # Catálogo Interativo Mobile
 
-Aplicativo mobile desenvolvido em React Native com Expo para apresentar produtos de uma loja online por categoria. O projeto consome a API REST DummyJSON com Axios, utiliza Redux Toolkit para armazenar temporariamente os dados do usuário logado e React Navigation para controlar o fluxo entre as telas.
+Aplicativo mobile desenvolvido em React Native com Expo SDK 54 para apresentar produtos de uma loja online por categoria. Os dados dos produtos são obtidos da API REST DummyJSON, consumidos com Axios, e a interface do aplicativo está apresentada em português do Brasil. O projeto utiliza Redux Toolkit para armazenar temporariamente os dados do usuário logado e React Navigation para controlar o fluxo entre as telas.
 
 ## Funcionalidades
 
@@ -10,7 +10,7 @@ Aplicativo mobile desenvolvido em React Native com Expo para apresentar produtos
 - Navegação por abas entre Masculino e Feminino.
 - Filtros por categorias exigidas no enunciado.
 - Consumo da rota `/products/category/{categoria}` com Axios.
-- Tela de detalhes carregada pelo ID do produto usando a rota `/products/{id}`.
+- Tela de detalhes do produto carregada pelo ID usando a rota `/products/{id}`.
 - Exibição de nome, imagem, descrição, preço, desconto, avaliação e estoque.
 - Botão Voltar na tela de detalhes usando React Navigation.
 - Logout funcional, limpando o usuário armazenado e retornando à tela de login.
@@ -19,12 +19,12 @@ Aplicativo mobile desenvolvido em React Native com Expo para apresentar produtos
 ## Tecnologias Utilizadas
 
 - React Native
-- Expo
+- Expo SDK 54
 - Axios
 - Redux Toolkit
 - React Redux
 - React Navigation
-- DummyJSON API
+- API DummyJSON
 
 ## Estrutura de Pastas
 
@@ -35,6 +35,11 @@ mobile-development/
   index.js
   package.json
   README.md
+  docs/
+    prints/
+      login.jpg
+      produtos.jpg
+      detalhes.jpg
   src/
     components/
       CategoryTabs.js
@@ -43,6 +48,7 @@ mobile-development/
       ProductCard.js
     data/
       categories.js
+      productPresentation.js
     screens/
       LoginScreen.js
       ProductDetailScreen.js
@@ -98,6 +104,8 @@ GET /products/category/{categoria}
 GET /products/{id}
 ```
 
+Os produtos são carregados diretamente da DummyJSON. A tradução dos nomes, descrições e textos visíveis acontece apenas na camada de apresentação do aplicativo.
+
 ## Categorias
 
 Categorias masculinas:
@@ -116,7 +124,7 @@ Categorias femininas:
 
 ## Fluxo do Aplicativo
 
-O usuário inicia na tela de login, informa nome e e-mail válidos e acessa a listagem de produtos. Na tela de produtos, ele pode alternar entre as abas Masculino e Feminino e selecionar categorias específicas. Ao tocar em um produto, o app navega para a tela de detalhes passando o ID do produto pela rota. A tela de detalhes busca os dados completos na API e exibe as informações principais. Ao fazer logout, os dados do usuário são removidos do Redux e o app retorna para a tela de login.
+O usuário inicia na tela de login, informa nome e e-mail válidos e acessa a listagem de produtos. Na tela de produtos, ele pode alternar entre as abas Masculino e Feminino e selecionar categorias específicas. Ao tocar em um produto, o app navega para a tela de detalhes passando o ID do produto pela rota. A tela de detalhes busca os dados completos na API e exibe as informações principais em português do Brasil. Ao fazer logout, os dados do usuário são removidos do Redux e o app retorna para a tela de login.
 
 Fluxo resumido:
 
@@ -128,12 +136,12 @@ Login -> Produtos -> Detalhes -> Logout
 
 ### Tela de Login
 
-Adicionar aqui o print real da tela de login.
+![Tela de Login](docs/prints/login.jpg)
 
 ### Listagem de Produtos
 
-Adicionar aqui o print real da listagem de produtos.
+![Listagem de Produtos](docs/prints/produtos.jpg)
 
 ### Detalhes do Produto
 
-Adicionar aqui o print real da tela de detalhes do produto.
+![Detalhes do Produto](docs/prints/detalhes.jpg)
