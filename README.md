@@ -1,6 +1,6 @@
 # Catálogo Interativo Mobile
 
-Aplicativo mobile desenvolvido em React Native com Expo SDK 54 para apresentar produtos de uma loja online por categoria. Os dados dos produtos são obtidos da API REST DummyJSON, consumidos com Axios, e a interface do aplicativo está apresentada em português do Brasil. O projeto utiliza Redux Toolkit para armazenar temporariamente os dados do usuário logado e React Navigation para controlar o fluxo entre as telas.
+Aplicativo mobile desenvolvido em React Native com Expo SDK 57 para apresentar produtos de uma loja online por categoria. Os dados dos produtos são obtidos da API REST DummyJSON, consumidos com Axios, e a interface do aplicativo está apresentada em português do Brasil. O projeto utiliza Redux Toolkit para armazenar temporariamente os dados do usuário logado e React Navigation para controlar o fluxo entre as telas.
 
 ## Funcionalidades
 
@@ -19,7 +19,7 @@ Aplicativo mobile desenvolvido em React Native com Expo SDK 54 para apresentar p
 ## Tecnologias Utilizadas
 
 - React Native
-- Expo SDK 54
+- Expo SDK 57
 - Axios
 - Redux Toolkit
 - React Redux
