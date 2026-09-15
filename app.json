@@ -1,18 +1,23 @@
 {
   "expo": {
-    "name": "Catálogo Mobile",
+    "name": "Catálogo Interativo de Produtos",
     "slug": "catalogo-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "splash": {
-      "backgroundColor": "#f7f4ef"
-    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "package": "com.felipe.catalogomobile"
-    }
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#f7f4ef"
+        }
+      ]
+    ]
   }
 }

@@ -36,7 +36,7 @@ export default function ProductDetailScreen({ navigation, route }) {
         <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
           <Text style={styles.backText}>Voltar</Text>
         </Pressable>
-        <Text style={styles.headerTitle}>Detalhes</Text>
+        <Text style={styles.headerTitle}>Detalhes do Produto</Text>
       </View>
       {loading ? <LoadingState message="Carregando detalhes..." /> : null}
       {!loading && error ? <ErrorState message={error} onRetry={loadProduct} /> : null}

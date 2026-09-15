@@ -162,8 +162,8 @@ export function getProductPresentation(product) {
 
   return {
     ...product,
-    displayTitle: translation.title ?? product.title,
-    displayDescription: translation.description ?? product.description,
+    displayTitle: translation.title ?? 'Produto sem tradução cadastrada',
+    displayDescription: translation.description ?? 'Descrição em português indisponível para este produto.',
   };
 }
 
